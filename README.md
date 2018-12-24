@@ -2,7 +2,7 @@ Output a randomly chosen poem by emily dickinson. Poems were retrieved from [Pro
 
 To print a poem, add the `--print` flag to `main.py`!
 ```shell
-$ python withfeathers/main.py --print --decorate --time
+$ python3 withfeathers/withfeathers.py --print --decorate --time
 
 XXXVII.
 

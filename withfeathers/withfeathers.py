@@ -211,7 +211,6 @@ def main():
     if (args.stdout):
         print(output)
 
-    #print(output)
     return output
 
 main()
