@@ -1,0 +1,168 @@
+/***************************************************/
+/* RESPONSIVE DESIGN
+/***************************************************/
+
+
+@media only screen and (max-width: 800px) {
+    .site-footer {
+        height:8em
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .site-footer {
+        height:9em
+    }
+
+
+}
+
+@media only screen and (max-width: 400px) {
+
+    span.date:before {
+        content: ' ';
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    .site-footer {
+        height:10em
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .site-footer {
+        height:11em
+    }
+}
+
+@media only screen and (max-width: 620px) {
+
+    #header li::after {
+        content: none;
+    }
+
+    #header li::before {
+        content: none;
+    }
+
+}
+
+@font-face {
+    font-family:"BoswellRegular";
+    src: url("assets/Boswell Regular.ttf") /* TTF file for CSS3 browsers */
+}
+
+
+@media screen and (max-width: 620px) {
+    ul.sidenav {
+        width: 100%;
+        height: 15em;
+        position: relative;
+        columns: 2;
+    }
+
+    #header ul.sidenav {
+        padding: 0px;
+    }
+
+    ul.sidenav li:hover {
+        background-color: #555;
+    }
+
+    #header ul li {
+        padding: 1em;
+        display: block;
+        margin: 0px;
+        text-align: center;
+    }
+
+    ul.sidenav li a {
+        float: left;
+        padding: 15px;
+    }
+
+    #header a {
+        padding: 1em;
+    }
+
+    div.content {margin-left: 0;}
+
+    ul.sidenav li a {
+        text-align: center;
+        float: none;
+    }
+
+    li.quote {
+        white-space: pre-line;
+    }
+
+
+    .fixed {
+        width: 100%;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    #content {
+        padding: 4%;
+    }
+
+
+    div.about {
+        width: 100%;
+        background-image: none;
+    }
+
+    div.writings {
+        width: 100%;
+        background-image: none;
+    }
+
+    div.code {
+        width: 100%;
+        background-image: none;
+    }
+
+    div.git {
+        width: 100%;
+        background-image: none;
+    }
+
+    div.favorites {
+        width: 100%;
+        background-image: none;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    img.center {
+        width: 70%;
+        padding: 5%;
+    }
+
+
+    ul.code, li.code {
+        display: inherit;
+    }
+}
+
+
+ul .icon-bar {
+    margin-top: .375em;
+    margin-bottom: .375em;
+    display: block;
+    margin-right: auto;
+    margin-left: 20px;
+    width: 2em;
+    height: 0.3em;
+    background-color: white;
+}
+

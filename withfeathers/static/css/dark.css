@@ -1,0 +1,15 @@
+body, .highlight {
+	background-color: #2a2730
+}
+
+h2, p, .highlight {
+	color: snow;
+}
+
+.dot {
+	color: lightgrey;
+}
+
+.light {
+	border: none;	
+}

@@ -1,0 +1,764 @@
+/***************************************************/
+/* CSS I've cobbled together from the far corners of the world.
+Feel free to copy and paste, fork, clone, or anything you like. */
+/***************************************************/
+
+
+//***************************************************/
+//* SASS VARIABLES
+//***************************************************/
+
+$font-stack: Helvetica, Ariral, Sans-Serif;
+
+$pop-1: #DB37C4; /* pink */
+$pop-2: #ED68D9; /* purple */
+$pop-3: #49CCD4; /* teal */
+$pop-4: #678CFA; /* light blue */
+$pop-5: #4635F7; /* blue */
+/* #636FF38*/
+
+$header-footer: #2A2730;
+
+$heart: #FF357A;
+
+$grey-light: #d5d5d5;
+$grey-dark: #2a2730;
+
+$white: #FFFFFF;
+
+$blue-light: #eef;
+
+/* https://stackoverflow.com/questions/12144000/using-custom-fonts-using-css */
+@font-face {
+    font-family: 'EB Garamond'; /*a name to be used later*/
+    src: url('/assets/fonts/EBGaramond-0.016/ttf/EBGaramond12-Regular.ttf'); /*URL to font*/
+}
+
+
+
+// from main.scss
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+/***************************************************/
+/* BASIC STUFF
+/***************************************************/
+
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        box-sizing: border-box;
+    }
+
+body {
+    word-wrap: break-word;
+}
+
+
+/* paragraphs*/
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #333;
+    /*padding-bottom: 2%;*/
+    /*text-indent: 5%;*/
+}
+
+p.code {
+    text-align: center;
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+
+p.headers {
+  background-color: #D3D2E0;
+  border: 1px $grey-light solid;
+
+}
+
+/* anchors */
+
+a {
+  color: $heart;
+  text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: $heart;
+
+}
+
+a.about {
+  color: $pop-1;
+  text-decoration-color: $pop-1;
+}
+
+a.writings {
+  color: $pop-2;
+  text-decoration-color: $pop-2;
+}
+
+
+a.code {
+  color: $pop-3;
+  text-decoration-color: $pop-3;
+}
+
+
+a.git {
+  color: $pop-4;
+  text-decoration-color: $pop-4;
+}
+
+a.favorites {
+  color: $pop-5;
+  text-decoration-color: $pop-5;
+}
+
+
+#featured a {
+  font-size: 1.2em;
+}
+
+#header a, #footer a {
+    color: $white;
+}
+
+li.header::after {
+    content: " )";
+    color: grey;
+}
+
+li.header::before {
+    content: "( ";
+    color: grey;
+}
+
+a.secret {
+    float: right;
+}
+
+
+/* div */
+
+
+div.about {
+    border: solid 1px $pop-1;
+    width: 90%;
+    background-image: url('/assets/png/code_example2_pink.png');
+}
+div.writings {
+    border: solid 1px $pop-2;
+    width: 90%;
+    background-image: url('/assets/png/code_example2_pink.png');
+}
+div.code {
+    border: solid 1px $pop-3;
+    width: 90%;
+    background-image: url('/assets/png/code_example2_pink.png');
+}
+div.git {
+    border: solid 1px $pop-4;
+    width: 90%;
+    background-image: url('/assets/png/code_example2_pink.png');
+}
+div.favorites {
+    border: solid 1px $pop-5;
+    width: 90%;
+    background-image: url('/assets/png/code_example2_pink.png');
+}
+
+
+/* headers */
+
+h1 {
+    font-size: 3em;
+    font-family: $font-stack;
+    text-align: center;
+    color: #2a2730;
+}
+
+h1.home-page {
+    padding-top: 2%;
+}
+
+h2 {
+    font-size: 2em;
+    font-family: $font-stack;
+    color: #2a2730;
+}
+
+h2.code {
+    /*color: #595EF7;*/
+}
+
+
+/* lists */
+
+nav ul, #footer ul, #header ul {
+    font-family: $font-stack;
+    padding: 10px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul li, #footer ul li, #header ul li, ul li {
+    display: inline;
+    color: #99979c;
+}
+
+ul.code, li.code {
+    text-align: center;
+    padding: 2%;
+}
+
+ul.posts {
+    margin: 20px auto 40px;
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
+
+li.quote
+{
+    float:right;
+}
+
+#header li {
+
+    margin-right: 20px;
+}
+
+
+
+hr {
+    border-bottom: 1px solid #123456;
+    border-top: 0px;
+}
+
+#header {
+    font-size: .8em;
+    background-color: $grey-dark;
+}
+
+.site-footer {
+  background-color: $grey-dark;
+  height:4.5em;
+}
+
+
+/* decorative splash of color at top of page */
+/* http://sass-lang.com/ */
+.popstripe
+{
+  height: .25em;
+background-size: 100%;
+    background-image: linear-gradient(to right, $pop-1 0%, $pop-1 20%, $pop-2 20%, $pop-2 40%, $pop-3 40%, $pop-3 60%, $pop-4 60%, $pop-4 80%, $pop-5 80%, $pop-5 100%);
+}
+
+
+
+.heart {
+  color: $heart;
+}
+
+
+
+img.center {
+    display: block;
+    margin: 0 auto;
+    /*width: 20%;*/
+    padding: 2%;
+}
+
+
+
+/* boxed items like in code and writings */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fixed{
+    width: 30%;
+    word-wrap: break-word;
+    margin: 1.5em;
+    border: solid 1px $grey-light;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flex-item {
+    flex-grow: 1;
+}
+
+
+
+/* borders */
+.border {
+  margin: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: 1px solid $grey-light;
+}
+
+.border-home {
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: 1px solid #db34ed;
+
+    .border-code {
+      border-bottom: 1px solid $grey-light;
+    }
+}
+
+
+/* arrow links for next and previous */
+/* http://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html */
+.PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+  color: grey;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 1%;
+}
+
+.PageNavigation .next {
+  text-align: right;
+  float: right;
+  padding-left: 4%;
+}
+
+
+.sub {
+        color: grey;
+        font-size: 1.0em;
+        line-height: 1.4em;
+}
+div.sub {
+    float: right;
+    clear: right;
+    margin: 0px;
+}
+span.sub {
+    font-size: 0.86em;
+}
+
+
+/***************************************************/
+/* HACK TO HAVE THE FOOTER STAY AT THE BOTTOM
+/***************************************************/
+
+
+/**
+ * CSSReset.com - How To Keep Footer At Bottom of Page with CSS
+ *
+ * Original Tutorial: http://www.cssreset.com/2010/css-tutorials/how-to-keep-footer-at-bottom-of-page-with-css/
+ * License: Free - do whatever you like with it! Credit and linkbacks much appreciated.
+ *
+ * NB: Make sure the value for 'padding-bottom' on #content is equal to or greater than the height of #footer.
+ */
+html {
+  height: 100%;
+}
+
+body {
+  padding-bottom:58px;
+  height:100%;
+}
+
+#wrapper {
+  min-height:100%;
+  position:relative;
+}
+
+#content {
+  padding:4%; /* Height of the footer element */
+}
+
+#footer {
+  width:100%;
+  height:0px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  font-size: .8em;
+}
+
+
+/***************************************************/
+/* RESPONSIVE DESIGN
+/***************************************************/
+
+
+@media only screen and (max-width: 800px) {
+    .site-footer {
+        height:6em
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .site-footer {
+        height:7em
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    .site-footer {
+        height:8em
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .site-footer {
+        height:9em
+    }
+}
+
+@media only screen and (max-width: 620px) {
+
+    #header li::after {
+        content: none;
+    }
+
+    #header li::before {
+        content: none;
+    }
+
+    }
+
+@font-face {
+    font-family:"BoswellRegular";
+    src: url("assets/Boswell Regular.ttf") /* TTF file for CSS3 browsers */
+}
+
+
+@media screen and (max-width: 620px) {
+    ul.sidenav {
+        width: 100%;
+        height: 13em;
+        position: relative;
+        columns: 2;
+    }
+    #header ul.sidenav {
+        padding: 0px;
+    }
+ul.sidenav li:hover {
+    background-color: #555;
+}
+ #header ul li {
+
+     padding: 1em;
+    display: block;
+    margin: 0px;
+    text-align: center;
+    }
+    ul.sidenav li a {
+        float: left;
+        padding: 15px;
+    }
+    #header a {
+        padding: 1em;
+    }
+    div.content {margin-left: 0;}
+
+    ul.sidenav li a {
+        text-align: center;
+        float: none;
+    }
+
+    li.quote {
+        white-space: pre-line;
+    }
+
+
+    .fixed {
+        width: 100%;
+        margin-right: 0.5em;
+        margin-left: 0.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    #content {
+        padding: 4%;
+    }
+
+
+    div.about {
+        width: 100%;
+        background-image: none;
+    }
+    div.writings {
+        width: 100%;
+        background-image: none;
+    }
+    div.code {
+        width: 100%;
+        background-image: none;
+    }
+    div.git {
+        width: 100%;
+        background-image: none;
+    }
+    div.favorites {
+        width: 100%;
+        background-image: none;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    img.center {
+        width: 70%;
+        padding: 5%;
+    }
+
+
+    ul.code, li.code {
+        display: inherit;
+    }
+}
+
+
+ul .icon-bar {
+    margin-top: .375em;
+    margin-bottom: .375em;
+    display: block;
+    margin-right: auto;
+    margin-left: 20px;
+    width: 2em;
+    height: 0.3em;
+    background-color: white;
+}
+
+
+/***************************************************/
+/* SYNTAX HIGHLIGHTING
+/***************************************************/
+
+/**
+ * Code formatting
+ */
+pre {
+  font-size: 0.9em;
+  background-color: $blue-light;
+
+  padding: 8px 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 0.9em;
+  background-color: $blue-light;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+
+    font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    font-size-adjust: none;
+    font-stretch: normal;
+    -x-system-font: none;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant-alternates: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-variant-position: normal;
+
+  background: #fff; }
+  .highlighter-rouge .highlight {
+    background: #eef; }
+  .highlight .c {
+    color: #998;
+    font-style: italic; }
+  .highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2; }
+  .highlight .k {
+    font-weight: bold; }
+  .highlight .o {
+    font-weight: bold; }
+  .highlight .cm {
+    color: #998;
+    font-style: italic; }
+  .highlight .cp {
+    color: #999;
+    font-weight: bold; }
+  .highlight .c1 {
+    color: #998;
+    font-style: italic; }
+  .highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic; }
+  .highlight .gd {
+    color: #000;
+    background-color: #fdd; }
+  .highlight .gd .x {
+    color: #000;
+    background-color: #faa; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .gr {
+    color: #a00; }
+  .highlight .gh {
+    color: #999; }
+  .highlight .gi {
+    color: #000;
+    background-color: #dfd; }
+  .highlight .gi .x {
+    color: #000;
+    background-color: #afa; }
+  .highlight .go {
+    color: #888; }
+  .highlight .gp {
+    color: #555; }
+  .highlight .gs {
+    font-weight: bold; }
+  .highlight .gu {
+    color: #aaa; }
+  .highlight .gt {
+    color: #a00; }
+  .highlight .kc {
+    font-weight: bold; }
+  .highlight .kd {
+    font-weight: bold; }
+  .highlight .kp {
+    font-weight: bold; }
+  .highlight .kr {
+    font-weight: bold; }
+  .highlight .kt {
+    color: #458;
+    font-weight: bold; }
+  .highlight .m {
+    color: #099; }
+  .highlight .s {
+    color: #d14; }
+  .highlight .na {
+    color: #008080; }
+  .highlight .nb {
+    color: #0086B3; }
+  .highlight .nc {
+    color: #458;
+    font-weight: bold; }
+  .highlight .no {
+    color: #008080; }
+  .highlight .ni {
+    color: #800080; }
+  .highlight .ne {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nf {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nn {
+    color: #555; }
+  .highlight .nt {
+    color: #000080; }
+  .highlight .nv {
+    color: #008080; }
+  .highlight .ow {
+    font-weight: bold; }
+  .highlight .w {
+    color: #bbb; }
+  .highlight .mf {
+    color: #099; }
+  .highlight .mh {
+    color: #099; }
+  .highlight .mi {
+    color: #099; }
+  .highlight .mo {
+    color: #099; }
+  .highlight .sb {
+    color: #d14; }
+  .highlight .sc {
+    color: #d14; }
+  .highlight .sd {
+    color: #d14; }
+  .highlight .s2 {
+    color: #d14; }
+  .highlight .se {
+    color: #d14; }
+  .highlight .sh {
+    color: #d14; }
+  .highlight .si {
+    color: #d14; }
+  .highlight .sx {
+    color: #d14; }
+  .highlight .sr {
+    color: #009926; }
+  .highlight .s1 {
+    color: #d14; }
+  .highlight .ss {
+    color: #990073; }
+  .highlight .bp {
+    color: #999; }
+  .highlight .vc {
+    color: #008080; }
+  .highlight .vg {
+    color: #008080; }
+  .highlight .vi {
+    color: #008080; }
+  .highlight .il {
+    color: #099; }
+
+
+

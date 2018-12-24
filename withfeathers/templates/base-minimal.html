@@ -1,0 +1,31 @@
+<!doctype html>
+<!--Louis, I think this is the beginning of a beautiful friendship.-->
+
+<html lang="en">
+    <head>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+        <link id="dark" rel="stylesheet" href="">
+	<script type="text/javascript" src="{{ url_for('static',filename='js/theme.js') }}" async></script>
+
+        <link rel="icon" type="image/png" href="/static/png/iconLambda.png" />
+        <!--<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">-->
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#FF357A">
+
+      <title>hello!</title>
+      <meta name="description" content="Home of a stuck up, half-witted, scruffy-looking nerf herder.">
+
+      <!--<link rel="stylesheet" href="/assets/main.css">-->
+      <link rel="canonical" href="https://liambeckman.com/">
+      <link rel="alternate" type="application/rss+xml" title="hello" href="/feed.xml">
+
+
+        <body>
+
+        {% block content %}{% endblock %}
+
+        </body>
+</html>
