@@ -6,6 +6,7 @@ from random import shuffle
 import argparse
 import time
 import os
+import urllib.request
 
 
 def getArgs():
@@ -20,7 +21,7 @@ def getArgs():
                         help='decorate the output (default: False)')
 
     parser.add_argument('-f', '--filename', dest='filename', action='store',
-                        help='specify filename of source file (default: pg12242.txt)')
+                        help='specify filename of source file (default: emilyPoems.txt)')
 
     parser.add_argument('-o', '--outputDir', dest='outputDir', action='store',
                         help='specify directory path of poem files (default: emilyPoems)')
@@ -49,7 +50,9 @@ def getArgs():
 
 
 def download(url):
-    run('wget "%s"' % url, shell=False)
+    with urllib.request.urlopen(url) as response, open("emilyPoems.txt", 'wb') as outFile:
+        data = response.read()
+        outFile.write(data)
 
 
 def parse(filename, outputDir):
@@ -117,20 +120,12 @@ def display(path, isRandom):
     if (isRandom):
         group = randomize(group)
 
-    # shuffle(group)
-
-    # output filename and file contents
-    # run('echo %s; cat %s/%s' % (group[0], path, group[0]), shell=False)
-
     pathFull = path + "/" + group[0]
     poemFile = open(pathFull, 'r')
     for line in poemFile:
         output += line
 
     return output
-
-    # uncomment to output poem in cowsay
-    # run('cat %s/%s | cowsay -n' % (path, group[0]), shell=False)
 
 
 def randomize(group):
@@ -141,8 +136,6 @@ def randomize(group):
 def main():
     start = time.time()
 
-    # https://stackoverflow.com/questions/3430372/how-to-get-full-path-of-current-files-directory-in-python
-    # https://stackoverflow.com/questions/7132861/building-full-path-filename-in-python
     PATH = os.path.dirname(os.path.abspath(__file__))
 
     args = getArgs()
@@ -155,13 +148,12 @@ def main():
     if (args.filename):
         myFile = args.filename
     else:
-        myFile = PATH + "/" + "pg12242.txt"
+        myFile = PATH + "/" + "emilyPoems.txt"
 
     if (args.outputDir):
         poemDir = args.outputDir
     else:
         poemDir = "emilyPoems"
-        safeDir = poemDir.replace('/', '_')
 
     if (args.randomoff):
         isRandom = False
@@ -174,17 +166,19 @@ def main():
         download(myUrl)
 
     # if the poem directory does not exist, create it with parsed poems.
-    myObj = Path("%s" % safeDir)
+    myObj = Path("%s" % poemDir)
     if not myObj.is_dir():
-        os.mkdir(safeDir)
-        parse(myFile, safeDir)
+        os.mkdir(poemDir)
+
+    if len(os.listdir(poemDir)) == 0:
+        parse(myFile, poemDir)
 
     # remove all poem files
     if (args.clean):
-        clean(myFile, safeDir)
+        clean(myFile, poemDir)
 
     # output the poems
-    poem = display(safeDir, isRandom)
+    poem = display(poemDir, isRandom)
 
     # calculate and output program run time in milliseconds
     finish = time.time()
@@ -213,4 +207,6 @@ def main():
 
     return output
 
+
 main()
+
