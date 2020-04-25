@@ -44,7 +44,6 @@ def getArgs():
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s 0.1.0')
 
-    # https://stackoverflow.com/questions/12818146/python-argparse-ignore-unrecognised-arguments
     args, unknown = parser.parse_known_args()
     return args
 
@@ -69,7 +68,6 @@ def parse(filename, outputDir):
         strings = ("I.\n", "V.\n", "X.\n", "L.\n")
         willWrite = []
 
-        # https://stackoverflow.com/questions/8583615/how-to-check-if-a-line-has-one-of-the-strings-in-a-list
         if any(s in lines[i] for s in strings):
 
             # write the roman numeral
@@ -87,7 +85,6 @@ def parse(filename, outputDir):
                 else:
                     emptyLine = 0
 
-            # https://stackoverflow.com/questions/1877999/delete-final-line-in-file-with-python
             # remove last two blank lines
             willWrite = willWrite[:-2]
 
@@ -120,7 +117,7 @@ def display(path, isRandom):
     if (isRandom):
         group = randomize(group)
 
-    pathFull = path + "/" + group[0]
+    pathFull = Path(path) / group[0]
     poemFile = open(pathFull, 'r')
     for line in poemFile:
         output += line
@@ -136,7 +133,7 @@ def randomize(group):
 def main():
     start = time.time()
 
-    PATH = os.path.dirname(os.path.abspath(__file__))
+    PATH = Path(__file__).parent.absolute()
 
     args = getArgs()
 
@@ -148,12 +145,12 @@ def main():
     if (args.filename):
         myFile = args.filename
     else:
-        myFile = PATH + "/" + "emilyPoems.txt"
+        myFile = PATH / "emilyPoems.txt"
 
     if (args.outputDir):
         poemDir = args.outputDir
     else:
-        poemDir = "emilyPoems"
+        poemDir = PATH / "emilyPoems"
 
     if (args.randomoff):
         isRandom = False
@@ -161,13 +158,11 @@ def main():
         isRandom = True
 
     # if poem text file is not found, retrieve it from web source
-    myObj = Path("%s" % myFile)
-    if not myObj.is_file():
+    if not myFile.is_file():
         download(myUrl)
 
     # if the poem directory does not exist, create it with parsed poems.
-    myObj = Path("%s" % poemDir)
-    if not myObj.is_dir():
+    if not poemDir.is_dir():
         os.mkdir(poemDir)
 
     if len(os.listdir(poemDir)) == 0:

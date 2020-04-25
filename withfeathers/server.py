@@ -30,9 +30,6 @@ def index():
     timeCurrent = datetime.utcnow().date()
     timeInitial = datetime.strptime(timeFile.readline(), "%Y-%m-%d\n").date()
 
-    print(timeCurrent)
-    print(timeInitial)
-
     # if there is a new day...
     if (timeCurrent > timeInitial):
         # update the poem initializer
