@@ -1,0 +1,7 @@
+[book]
+authors = ["liam beckman"]
+language = "en"
+multilingual = false
+src = "src"
+title = "withfeathers"
+[output.html]

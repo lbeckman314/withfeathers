@@ -130,7 +130,7 @@ def randomize(group):
     return group
 
 
-def main():
+def getPoem():
     start = time.time()
 
     PATH = Path(__file__).parent.absolute()
@@ -203,5 +203,5 @@ def main():
     return output
 
 
-main()
-
+if __name__ == "__main__":
+    getPoem()
