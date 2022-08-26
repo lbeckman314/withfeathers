@@ -51,13 +51,12 @@ git clone https://github.com/lbeckman314/withFeathers
 cd withFeathers
 
 # setup dependencies
-python3 -m venv virtual
-source virtual/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install flask
 
-# test flask server (for development, don't use for production)
-cd withfeathers
-FLASK_APP=server.py flask run
+# run the development flask server (http://localhost:5000) 
+FLASK_APP=withfeathers/server.py flask run
 
 # run the script
 python3 withfeathers.py --print --time
@@ -67,7 +66,7 @@ python3 withfeathers.py --print --time
 
 # Uninstallation
 
-<h2 class="code">0. Delete the directory.</h2>
+0. Delete the directory.
 
 ```shell
 rm -rfI withFeathers

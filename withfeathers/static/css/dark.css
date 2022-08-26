@@ -2,7 +2,7 @@ body, .highlight {
 	background-color: #2a2730
 }
 
-h2, p, .highlight {
+h2, p, .highlight, #title {
 	color: snow;
 }
 

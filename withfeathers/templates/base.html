@@ -1,31 +1,36 @@
 <!doctype html>
-<!--Louis, I think this is the beginning of a beautiful friendship.-->
-
 <html lang="en">
-    <head>
-	<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+<head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
         <link id="dark" rel="stylesheet" href="">
-	<script type="text/javascript" src="{{ url_for('static',filename='js/theme.js') }}" async></script>
-
+        <script type="text/javascript" src="{{ url_for('static',filename='js/theme.js') }}" async></script>
         <link rel="icon" type="image/png" href="/static/png/iconLambda.png" />
-        <!--<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#FF357A">
+        <title>withfeathers</title>
+        <link rel="alternate" type="application/rss+xml" title="hello" href="/feed.xml">
+<body>
+        <h2 style="font-family: 'EB Garamond'; font-size: 2.5em;"><a id="title" href="/">Daily Emily Dickinson</a></h2>
+        <p style="color: grey; padding-left: 9em;">
+                <a style="font-family: 'EB Garamond'; font-size: 1.3em; color: grey;"
+                        href="https://www.gutenberg.org/ebooks/12242">poems</a>
+                |
+                <a style="font-family: 'EB Garamond'; font-size: 1.3em; color: grey;" href="https://github.com/lbeckman314/withfeathers">source</a>
+                |
+                <a style="font-family: 'EB Garamond'; font-size: 1.3em; color: grey;" href="/s">simple</a>
+        </p>
 
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="theme-color" content="#FF357A">
+        <div class="style">
+                <span class="dot">·</span>
+                <button id="lightswitch" class="light" type="button">·</button>
+                <span class="dot">·</span>
+                <button id="darkswitch" class="dark" type="button">·</button>
+                <span class="dot">·</span>
+        </div>
 
-      <title>hello!</title>
-      <meta name="description" content="Home of a stuck up, half-witted, scruffy-looking nerf herder.">
+        {% block content %}{{content | safe}}{% endblock %}
+</body>
 
-      <!--<link rel="stylesheet" href="/assets/main.css">-->
-      <link rel="canonical" href="https://liambeckman.com/">
-      <link rel="alternate" type="application/rss+xml" title="hello" href="/feed.xml">
-
-
-        <body>
-
-        {% block content %}{% endblock %}
-
-        </body>
 </html>

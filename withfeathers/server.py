@@ -1,17 +1,15 @@
 from datetime import datetime
-from flask import Flask, request, session, g, redirect, \
-        url_for, abort, render_template, render_template_string, flash
-import mistune
+from flask import Flask, render_template 
 from pathlib import Path
 from withfeathers import getPoem
 import os
-import time
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 app = Flask(__name__, static_folder='assets')
 app.config.from_object(__name__)  # load config from this file , flaskr.py
 app.config.from_envvar('WITHFEATHERS', silent=True)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # get random poem
 def update():
@@ -45,7 +43,6 @@ def index():
     timePretty = timeCurrent.strftime("%A, %B %d, %Y")
     return render_template('index.html', content=poemString, date=timePretty)
 
-
 @app.route('/s/')
 def simple():
     poemFile = open(os.path.join(__location__, 'poemCurrent.txt'), "r");
@@ -55,5 +52,5 @@ def simple():
 
 if __name__ == "__main__":
     context=('ssl/fullchain.pem', 'ssl/privkey.pem')
-    app.run(host="0.0.0.0", ssl_context=context, threaded=True)
+    app.run(host="0.0.0.0", ssl_context=context, threaded=True, debug=True)
 
