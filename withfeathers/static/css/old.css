@@ -1,0 +1,78 @@
+/***************************************************/
+/* CSS I've cobbled together from the far corners of the world.
+Feel free to copy and paste, fork, clone, or anything you like. */
+/***************************************************/
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url("/static/fonts/EBGaramond-0.016/ttf/EBGaramond12-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  word-wrap: break-word;
+}
+
+#content {
+  padding-left: 6%;
+  padding-right: 6%;
+  padding-top: 4%;
+}
+
+pre {
+  font-size: 0.9em;
+  padding: 8px 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+@font-face {
+  font-family: "BoswellRegular";
+  src: url("assets/Boswell Regular.ttf");
+}
+
+@media screen and (max-width: 620px) {
+  div.content {
+    margin-left: 0;
+  }
+
+  #content {
+    padding: 4%;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-bottom: 58px;
+  height: 100%;
+}
+
+#content {
+  padding-bottom: 4%;
+  /* Height of the footer element */
+}
+
+.highlight {
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #fff;
+}
+
+.style {
+  padding-left: 18em;
+}
