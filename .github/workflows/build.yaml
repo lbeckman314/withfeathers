@@ -6,7 +6,7 @@
 # $ docker buildx create --use --platform=linux/arm64,linux/amd64 --name builder
 # $ docker buildx build --platform=linux/amd64,linux/arm64 -t ghcr.io/$USER/demonic-server:latest . --push
 
-name: Build Multi-Arch Docker Image
+name: Build
 
 on: 
   push:
