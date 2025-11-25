@@ -104,3 +104,28 @@ body {
 .style {
   padding-left: 18em;
 }
+
+a {
+  display: inline;
+}
+
+#lightswitch {
+  width: 1em;
+  height: 1em;
+  border: 1px black solid;
+  background: white;
+  cursor: pointer;
+  color: white;
+}
+
+#darkswitch {
+  width: 1em;
+  height: 1em;
+  border: 1px white solid;
+  background: black;
+  cursor: pointer;
+}
+
+p {
+  white-space: nowrap;
+}
